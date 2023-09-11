@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: api-portal-tls-cert.yaml
+  namespace: api-portal
+spec:
+  dnsNames:
+  - api-portal.taplab.tap.fynesy.com
+  secretName: tapfynesycom
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
